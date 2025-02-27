@@ -1,0 +1,53 @@
+name: Barber-Integration
+
+on:
+  push:
+    branches: ["main", "githubActions_docker"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: teste-back
+        run: npm run test
+        
+      - name: build
+        run: npm run build
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: matheuswenes
+          password: moderador456
+  
+      - name: Verify Docker Login
+        run: docker info
+
+      - name: Build and push app image
+        run: |
+          docker build -t matheuswenes/app:latest .
+          docker push matheuswenes/app:latest
+
+      - name: Pull PostgreSQL image
+        run: docker pull bitnami/postgresql:latest
+
+      - name: Tag and push PostgreSQL image
+        run: |
+          docker tag bitnami/postgresql:latest matheuswenes/postgresql:latest
+          docker push matheuswenes/postgresql:latest
+
+      - name: Pull MongoDB image
+        run: docker pull mongo:latest
+
+      - name: Tag and push MongoDB image
+        run: |
+          docker tag mongo:latest matheuswenes/mongo:latest
+          docker push matheuswenes/mongo:latest
