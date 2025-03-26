@@ -1,28 +1,65 @@
-Passos para configurar o BarberSystem:
+# Configuração do BarberSystem
 
-- Configurar o WSL se a máquina for Windows;
-- Instalar o Docker;
-- Instalar o Nodejs na máquina;
+## Pré-requisitos
+Antes de iniciar a configuração do projeto, verifique se sua máquina atende aos seguintes requisitos:
 
-Agora no ambiente de desenvolvimento:
+- **Windows**: Configurar o WSL (Windows Subsystem for Linux);
+- **Docker**: Instalar o Docker na máquina;
+- **Node.js**: Instalar a versão mais recente do Node.js.
 
-- Clonar o repositório do git;
-- No terminal usar o seguinte comando: git clone url;
-- Instalar as dependências do front e back;
+## Passos para Configuração
 
-Instalando as dependências do Front-end:
+### 1. Clonar o Repositório
 
-- Entrar no diretório do front;
-- Usar o seguinte comando: npm install. Automaticamente as dependências serão instaladas;
-- Agora nas próximas vezes utilizar npm start para iniciar o front-end.
+No terminal, execute o seguinte comando para clonar o repositório:
+```sh
+ git clone <URL_DO_REPOSITORIO>
+```
 
-Instalando as dependências do back-end:
+### 2. Instalar as Dependências
 
-- Entrar no diretório do back;
-- Usar o seguinte comando: npm ci. Automaticamente estará instalando as dependências a partir das versões em que o arquivo package.json está designado.
-- E nas próximas vezes utilizar o npm run dev:server. Isso estará iniciando o backend.
+#### **Front-end**
+1. Acesse o diretório do front-end:
+   ```sh
+   cd front
+   ```
+2. Instale as dependências com o seguinte comando:
+   ```sh
+   npm install
+   ```
+3. Para iniciar o front-end, utilize:
+   ```sh
+   npm start
+   ```
 
-E por fim lembrar sempre de startar as migrações do banco de dados:
+#### **Back-end**
+1. Acesse o diretório do back-end:
+   ```sh
+   cd back
+   ```
+2. Instale as dependências utilizando:
+   ```sh
+   npm ci
+   ```
+3. Para iniciar o back-end, utilize:
+   ```sh
+   npm run dev:server
+   ```
 
-- Para startar as migrações basta utilizar o comando: yarn yarn ts-node-dev ./node_modules/typeorm/cli.js -d src/shared/infra/database/index.ts migration:run
-- Se sua máquina não tiver o YARN configurado, basta ir no powershell admin e usar o seguinte comando: npm install global yarn. Após isso poderá usar o comando das migrações mencionado no tópico acima.
+### 3. Configuração do Banco de Dados
+
+Para executar as migrações do banco de dados, utilize o comando abaixo:
+```sh
+yarn yarn ts-node-dev ./node_modules/typeorm/cli.js -d src/shared/infra/database/index.ts migration:run
+```
+
+Caso o **Yarn** não esteja instalado na sua máquina, instale-o executando o seguinte comando no PowerShell (com permissões de administrador):
+```sh
+npm install -g yarn
+```
+Após a instalação, você poderá rodar as migrações normalmente.
+
+---
+Agora seu ambiente de desenvolvimento está pronto para rodar o BarberSystem! 🚀
+
+
