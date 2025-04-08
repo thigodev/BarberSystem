@@ -50,7 +50,7 @@ No terminal, execute o seguinte comando para clonar o repositório:
 
 Para executar as migrações do banco de dados, utilize o comando abaixo:
 ```sh
-yarn yarn ts-node-dev ./node_modules/typeorm/cli.js -d src/shared/infra/database/index.ts migration:run
+yarn ts-node-dev ./node_modules/typeorm/cli.js -d src/shared/infra/database/index.ts migration:run
 ```
 
 Caso o **Yarn** não esteja instalado na sua máquina, instale-o executando o seguinte comando no PowerShell (com permissões de administrador):
