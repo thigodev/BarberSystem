@@ -1,174 +1,213 @@
-import styled, { keyframes } from "styled-components";
-import { shade } from "polished";
-import SignupBackground from "../../assets/signup-background.png";
+import styled, { keyframes } from "styled-components"
 
-
-export const Container = styled.div`
-  height: 100vh;
-  background: url(${SignupBackground}) 100% no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  position: relative;
-`;
-
-export const TextIntro = styled.div`
-  /* margin-right: 4rem; */
-  width: 300px;
-  margin-left: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
-  /* margin-left: 60rem; */
-
-  h1 {
-    text-align: center;
-    display: flex;
-    color: #ffffff;
-    font-size: 65px;
-    font-weight: 800;
-    text-decoration: bold;
-    width: 201%;
-    padding-bottom: 2rem;
-    padding-left: 5px;
-    flex-wrap: wrap;
-    word-break: break-word;
-  }
-  img {
-    width: 250px !important;
-    margin-left: -10rem;
-    margin-bottom: 2rem;
-  }
-  p {
-    font-size: 24px;
-    text-align: start;
-    width: 190%;
-    color: #ffffff;
-  }
-  @media (max-width: 1368px) {
-    margin-right: 20rem;
-    h1 {
-      font-size: 50px;
-      width: 150%;
-    }
-
-    p {
-      font-size: 14px;
-      width: 80%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 40px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-  }
-`;
-
-// export const Backgroud = styled.div`
-
-//   width: 35%;
-//   height: 70%;
-//   background: url(${LandingImg}) no-repeat center;
-//   background-size: cover;
-//   /* border-radius: 300px 200px 0px 300px; */
-
-// `;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-`;
-
-const appearFromRight = keyframes`
+const fadeInLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
   }
-`;
+`
 
-export const FormContent = styled.div`
-  background-color: #000000;
-  box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
+const fadeInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`
+
+export const Container = styled.div`
+  height: 100vh;
   display: flex;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`
+
+export const LeftSection = styled.div`
+  flex: 1;
+  background: #000000;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  border-radius: 2rem;
-  padding: 3rem 3rem 1rem 3rem;
-  flex-direction: column;
-
-  img {
-    margin-bottom: -3rem;
+  animation: ${fadeInLeft} 0.8s ease-out;
+  
+  @media (max-width: 768px) {
+    flex: none;
+    min-height: 40vh;
   }
-`;
+`
 
-export const AnimationContainer = styled.div`
-  gap: 5rem;
+export const RightSection = styled.div`
+  flex: 1;
+  background: #FFFFFF;
   display: flex;
-  width: 90%;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-
-  img {
-    width: 180px;
+  justify-content: center;
+  padding: 2rem;
+  animation: ${fadeInRight} 0.8s ease-out;
+  
+  @media (max-width: 768px) {
+    flex: none;
+    min-height: 60vh;
+    padding: 1.5rem;
   }
+`
 
+export const FormContainer = styled.div`
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+`
+
+export const Title = styled.h1`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 0.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
+`
+
+export const Subtitle = styled.p`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+`
+
+export const FormWrapper = styled.div`
+  margin-bottom: 1.5rem;
+  
   form {
-    margin: 80px 0px 50px 0px;
-    width: 340px;
-    text-align: center;
-    label {
-      color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    /* Estilização dos inputs */
+    > div {
+      margin-bottom: 0.5rem;
+      
+      input {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        background: #FAFAFA;
+        transition: all 0.3s ease;
+        
+        &:focus {
+          outline: none;
+          border-color: #333333;
+          background: #FFFFFF;
+          box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+        }
+        
+        &::placeholder {
+          color: #999999;
+        }
+      }
     }
-    h1 {
-      margin-bottom: 24px;
-      color: #ffffff;
-      text-transform: capitalize;
-      font-size: 28px;
+    
+    .checkbox-wrapper {
+      display: flex;
+      align-items: center;
+      margin: 0.5rem 0;
+      
+      label {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: #666666;
+        margin-left: 0.5rem;
+      }
+    }
+    
+    /* Estilização do botão */
+    button {
+      width: 100%;
+      padding: 1rem;
+      background: #000000;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
       font-weight: 600;
-    }
-    a {
-      color: #ffffff;
-      display: block;
-      margin-top: 24px;
-      text-decoration: none;
-      transition: color 0.2s;
-
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      
       &:hover {
-        color: ${shade(0.2, "#F4EDE8")};
+        background: #333333;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+      
+      &:active {
+        transform: translateY(0);
       }
     }
   }
+`
 
+export const SigninLink = styled.p`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666666;
+  text-align: center;
+  margin: 0;
+  
   a {
-    color: #ffffff;
-    display: block;
-    margin-top: 10px;
+    color: #333333;
     text-decoration: none;
-    transition: color 0.2s;
-
-    display: flex;
-    align-items: center;
-
-    svg {
-      margin-right: 16px;
-    }
-
+    font-weight: 600;
+    transition: color 0.3s ease;
+    
     &:hover {
-      color: #079992;
+      color: #000000;
+      text-decoration: underline;
     }
   }
-`;
+`
+
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    width: 200px;
+    height: auto;
+    filter: brightness(0) invert(1); /* Torna a logo branca */
+    
+    @media (max-width: 768px) {
+      width: 150px;
+    }
+    
+    @media (max-width: 480px) {
+      width: 120px;
+    }
+  }
+`

@@ -1,181 +1,182 @@
-import styled, { keyframes } from "styled-components";
-import { border, shade } from "polished";
-import LandingBackground from "../../assets/#000000.png.png";
-import LandingImg from "../../assets/landing.jpg";
+import styled, { keyframes } from "styled-components"
 
-
-
-export const Container = styled.div`
-  height: 100vh;
-  display: flex;
-
-  justify-content: space-between  ;
-  gap: 3rem;
-  position: relative;
-  background: url(${LandingBackground}) no-repeat ;
-  background-size: cover;
-  `;
-
-
-
-export const Content = styled.div`
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-`;
-const appearFromLeft = keyframes`
+const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
-`;
+`
 
+export const Container = styled.div`
+  min-height: 100vh;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+`
 
-
-export const AnimationContainer = styled.div`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  animation: ${appearFromLeft} 1s;
+  justify-content: center;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  animation: ${fadeIn} 1.2s ease-out;
+`
 
+export const LogoContainer = styled.div`
+  margin-bottom: 3rem;
+  
   img {
-  width: 800px;
-  margin-bottom: -36rem;
-
-  @media (max-width: 768px) {
-    width: 150px;
-  }
-
-  @media (max-width: 480px) {
     width: 120px;
-      
-  }
+    height: auto;
+    filter: brightness(0) invert(1); /* Torna a logo branca */
     
-  form {
-    margin: 80px 0;
-    width: 340px;
-    text-align: center;
-
-    h1 {
-      margin-bottom: 24px;
+    @media (max-width: 768px) {
+      width: 100px;
     }
-  }
-
-  > a {
-    color: #38ada9;
-    display: block;
-    margin-top: 10px;
-    text-decoration: none;
-    transition: color 0.2s;
-
-    display: flex;
-    align-items: center;
-
-    svg {
-      margin-right: 16px;
-    }
-
-    &:hover {
-      color: ${shade(0.2, "#38ada9")};
-    }
-  }
-`;
-
-
-
-
-export const TextIntro = styled.div`
-  width: 55%;
-  margin: 0 auto; /* Centraliza o container */
-  text-align: center; /* Centraliza o conteúdo de texto */
-  margin-bottom: 2rem;
-
-  h1 {
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo flexível */
-    color: #FFFFFF;
-    font-size: 80 px;
-    font-weight: 110;
-    text-decoration: bold;
-    width: 500%; /* Ajustando para não ultrapassar os limites */
-    padding-bottom: 2rem;
-    flex-wrap: wrap; /* Corrigido erro de sintaxe */
-    word-break: break-word;
-    font-family: "Girassol", serif; /* Adicionando a fonte Girassol */
-  }
-
-  p {
-    font-size: 30px;
-    width: 500%; /* Ajustando para melhor responsividade */
-    color: #FFFFFF;
-  }
-
-  @media (max-width: 1368px) {
-    margin-right: 0; /* Removendo margem lateral */
     
-    h1 {
-      font-size: 50px;
-      width: 100%;
-    }
-
-    p {
-      font-size: 14px;
-      width: 90%;
+    @media (max-width: 480px) {
+      width: 80px;
     }
   }
+`
 
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 40px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-  }
-`;
-
-
-export const ButtonRow = styled.div`
-margin-left: 190%;
-
-h1{
-  padding: 30px 15px 50px;
-}
-  width: 10rem;
-  display: flex;
-  font-size: 1.5rem;
-  color: transparent;
-
-`;
-
-export const Backgroud = styled.div`
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  width: 35%;
-  height: 70%;
-  background-size: cover;
-`;
-
-export const pedroLogo = styled.img`
-  width: 180px;
-  margin-bottom: 2rem;
-
+export const Title = styled.h1`
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  
   @media (max-width: 768px) {
-    width: 150px;
+    font-size: 3.5rem;
   }
-
+  
   @media (max-width: 480px) {
-    width: 120px;
+    font-size: 2.8rem;
   }
-`;
+`
+
+export const Subtitle = styled.div`
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #CCCCCC;
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 0 3rem;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 2.5rem;
+    height: 1px;
+    background: #CCCCCC;
+  }
+  
+  &::before {
+    left: 0;
+  }
+  
+  &::after {
+    right: 0;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0 2.5rem;
+    
+    &::before,
+    &::after {
+      width: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 0 2rem;
+    
+    &::before,
+    &::after {
+      width: 1.5rem;
+    }
+  }
+`
+
+export const ButtonContainer = styled.div`
+  margin-bottom: 3rem;
+`
+
+export const EntrarButton = styled.button`
+  background: #FFFFFF;
+  color: #000000;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  
+  &:hover {
+    background: #F0F0F0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0.8rem 2.5rem;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.7rem 2rem;
+    font-size: 0.8rem;
+  }
+`
+
+export const Description = styled.p`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #AAAAAA;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    br {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+`

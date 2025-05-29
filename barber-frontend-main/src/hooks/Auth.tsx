@@ -26,11 +26,19 @@ interface SignInCredentials {
   password: string;
 }
 
+interface SignUpCredentials {
+  name: string;
+  email: string;
+  password: string;
+  barber?: boolean;
+}
+
 interface AuthContextState {
   barber?: boolean;
   token: string;
   user: User;
   signIn: (credentials: SignInCredentials) => Promise<void>;
+  signUp: (credentials: SignUpCredentials) => Promise<void>; // Adicionado
   signOut: () => void;
   updateUser: (user: User) => void;
 }
@@ -64,6 +72,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setData({ token, user });
   }, []);
 
+  // Adicione esta função para cadastro
+  const signUp = useCallback(async ({ name, email, password, barber = false }: SignUpCredentials) => {
+    await api.post("users", { name, email, password, barber });
+    // O login pode ser feito automaticamente aqui, se desejar
+  }, []);
+
   const signOut = useCallback(() => {
     localStorage.removeItem("@barber:token");
     localStorage.removeItem("@barber:user");
@@ -87,6 +101,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         user: data.user,
         barber: data.user?.barber,
         signIn,
+        signUp, // Adicionado aqui
         signOut,
         updateUser,
       }}

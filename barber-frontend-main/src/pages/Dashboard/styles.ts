@@ -1,12 +1,11 @@
-import styled from "styled-components";
-import wellcome from "../../assets/back717171.png";
-import income from "../../assets/back717171.png";
-import weather from "../../assets/back717171.png";
+import styled from "styled-components"
+import wellcome from "../../assets/back717171.png"
+import income from "../../assets/back717171.png"
+import weather from "../../assets/back717171.png"
 
 export const Container = styled.div`
   min-height: 100vh;
-  `;
-
+  `
 
 export const Header = styled.div`
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
@@ -16,7 +15,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 export const HeaderContent = styled.div`
   width: 75%;
@@ -24,8 +23,6 @@ export const HeaderContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-
 
   > img {
     height: 80px;
@@ -70,7 +67,44 @@ export const HeaderContent = styled.div`
     }
   }
   }
-`;
+`
+
+export const FinanceButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #22c55e !important;
+  border: 2px solid #22c55e;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-left: 20px !important;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  svg {
+    color: #fff !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  span {
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 16px !important;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  &:hover {
+    background: #16a34a !important;
+    border-color: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+`
 
 export const Profile = styled.div`
   display: flex;
@@ -116,21 +150,20 @@ export const Profile = styled.div`
       }
     }
   }
-`;
+`
 
 export const Content = styled.div`
   width: 80%;
   margin: 44px auto;
   display: flex;
-`;
+`
 export const FlexForm = styled.div`
   display: flex;
   width: 100%;
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: space-between;
-`;
-
+`
 
 export const FormContent = styled.div`
   background-color: #484848;
@@ -159,7 +192,7 @@ export const FormContent = styled.div`
     border-radius: 20px;
   }
 
-  `;
+  `
 
 export const Wellcome = styled.div`
   background: url(${wellcome}) no-repeat 100%;
@@ -204,7 +237,7 @@ export const Wellcome = styled.div`
 
     }
   }
-`;
+`
 
 export const Income = styled.div`
   background: url(${income}) no-repeat 100%;
@@ -232,7 +265,7 @@ export const Income = styled.div`
       font-weight: 600;
     }
   }
-`;
+`
 export const Weather = styled.div`
   background: url(${weather}) no-repeat 100%;
   padding: .5rem;
@@ -279,7 +312,7 @@ export const Weather = styled.div`
       color:rgb(255, 255, 255);
       font-weight: 600;
     }
-`;
+`
 
 export const Schedule = styled.div`
   flex: 1;
@@ -292,9 +325,6 @@ export const Schedule = styled.div`
   box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.35);
   position: relative;
   border-radius: 1rem .1rem 1rem 1rem;
-
-
-
 
   h1 {
     font-size: 36px;
@@ -322,7 +352,7 @@ export const Schedule = styled.div`
       margin: 0 8px;
     }
   }
-`;
+`
 
 export const NextAppointment = styled.div`
   margin-top: 64px;
@@ -375,7 +405,7 @@ export const NextAppointment = styled.div`
       }
     }
   }
-`;
+`
 
 export const Section = styled.section`
   margin-top: 48px;
@@ -393,7 +423,7 @@ export const Section = styled.section`
   > p {
     color:rgb(255, 255, 255);
   }
-`;
+`
 
 export const Appointment = styled.div`
   display: flex;
@@ -437,7 +467,7 @@ export const Appointment = styled.div`
       font-size: 20px;
     }
   }
-`;
+`
 
 export const Calendar = styled.div`
   box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.3);
@@ -504,4 +534,4 @@ export const Calendar = styled.div`
     color:rgb(85, 85, 85) !important;
   }
 
-`;
+`
