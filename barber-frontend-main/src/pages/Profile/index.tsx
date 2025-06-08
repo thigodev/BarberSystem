@@ -119,7 +119,7 @@ export const Profile: React.FC = () => {
                 </label>
               </AvatarInput>
 
-              <h1>Meu perfil</h1>
+              <h1>Alterar Informações</h1>
 
               <Input name="name" icon={FiUser} placeholder="Nome" />
               <Input name="email" icon={FiMail} placeholder="E-mail" />
@@ -144,7 +144,9 @@ export const Profile: React.FC = () => {
                 placeholder="Confirmar senha"
               />
 
-              <Button type="submit">Confirmar mundanças</Button>
+              <Button type="submit">Confirmar alterações</Button>
+
+              <p>Sua foto de perfil é visível para todos, em todos os produtos sistemas da berbearia.</p>
             </Form>
           </FormContent>
         </Content>

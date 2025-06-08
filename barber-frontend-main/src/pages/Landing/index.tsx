@@ -32,11 +32,8 @@ export const Landing: React.FC = () => {
         </ButtonContainer>
 
         <Description>
-          Agende com facilidade, escolha entre os melhores profissionais,
-          <br />
-          gerencie seus horários e desfrute da conveniência de cuidar do
-          <br />
-          seu visual com praticidade e eficiência.
+          <p>Agende com facilidade, escolha entre os melhores profissionais, gerencie seus horários e 
+            desfrute da conveniência de cuidar do seu visual com praticidade e eficiência.</p>
         </Description>
       </Content>
     </Container>

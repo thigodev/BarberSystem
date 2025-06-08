@@ -20,7 +20,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input: React.FC<InputProps> = ({
   name,
   containerStyle,
-  icon: Icon,
   ...rest
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -55,7 +54,6 @@ export const Input: React.FC<InputProps> = ({
       isFilled={isFilled}
       isFocused={isFocused}
     >
-      {Icon && <Icon size={20} />}
       <input
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}

@@ -8,7 +8,7 @@ import { useAuth } from "../../hooks/Auth";
 import api from "../../services/api";
 import "react-day-picker/src/style.css";
 import title from "../../assets/titlehangout.png"
-import logoImg from "../../assets/logo.png";
+import logoImg from "../../assets/pngpedro.png";
 
 import {
 
@@ -176,11 +176,10 @@ const CreateAppointment: React.FC = () => {
       <Header>
         <HeaderContent>
           <img src={logoImg} alt="Logo" />
-          <h1>Barber<span>-Slot</span></h1>
           <Profile>
             <UserAvatar src={user.avatar_url} alt={user.name} />
             <div>
-              <span>Bem-vindo,</span>
+              <p>Bem-vindo(a), </p>
               <Link to="/profile">
                 <strong>{user.name}</strong>
               </Link>
@@ -199,7 +198,6 @@ const CreateAppointment: React.FC = () => {
               </Link>
             </Pointer>
           <Tittle>
-              <img src={title} />
               <h2>Agendamento</h2>
           </Tittle>
           <HeaderTitle>Cabeleireiros</HeaderTitle>
@@ -290,9 +288,8 @@ const CreateAppointment: React.FC = () => {
             </Section>
           </Schedule>
 
-          <CreateAppointmentButton onClick={handleCreateAppointment}>
-            <CreateAppointmentButtonText>Agendar</CreateAppointmentButtonText>
-          </CreateAppointmentButton>
+          <CreateAppointmentButton onClick={handleCreateAppointment} style={{ fontSize: '18px' }}>Confirmar
+</CreateAppointmentButton>
         </FormContent>
       </Content>
 

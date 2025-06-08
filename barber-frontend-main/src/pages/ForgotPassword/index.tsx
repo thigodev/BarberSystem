@@ -14,9 +14,9 @@ import getValidationErrors from "../../util/getValidationErrors";
 
 import * as Yup from "yup";
 
-import logoImg from "../../assets/logo.png";
+import logoImg from "../../assets/pngpedro.png";
 
-import { Container, Content, AnimationContainer, FormContent, TextIntro } from "./styles";
+import { Container, Content, AnimationContainer, FormContent, TextIntro, SignupLink } from "./styles";
 import api from "../../services/api";
 
 interface ForgotPasswordFormData {
@@ -81,7 +81,7 @@ export const ForgortPassword: React.FC = () => {
 
         <AnimationContainer>
           <FormContent>
-            <img src={logoImg} alt="GoBarber" />
+            <img src={logoImg || "/placeholder.svg"} alt="Pedro Barbeiro Logo" />
 
             <Form
               placeholder={false}
@@ -90,28 +90,21 @@ export const ForgortPassword: React.FC = () => {
               ref={formRef}
               onSubmit={handleSubmit}
             >
-              <h1>Recuperar <label>senha</label></h1>
+              <h1>Recuperação de conta</h1>
+
+              <p>Digite seu e-mail abaixo para
+              receber um link para redefinir sua senha.</p>
 
               <Input name="email" icon={FiMail} placeholder="E-mail" />
 
               <Button loading={loading} type="submit">
-                Recuperar
+                Enviar
               </Button>
             </Form>
-
-            <Link to="/signin">
-              <FiLogIn />
-              Voltar ao Login
-            </Link>
+            
+          <SignupLink>Tudo certo? <Link to="/signin">  Voltar ao login</Link></SignupLink>
+          
           </FormContent>
-          <TextIntro>
-            <img src={forgotIlus} />
-            <h1>Esqueceu sua Senha?</h1>
-            <p>Não se preocupe, estamos aqui para ajudar!
-              Siga os passos abaixo para redefinir sua senha
-              e voltar a agendar seus cortes de cabelo com facilidade.
-            </p>
-          </TextIntro>
         </AnimationContainer>
       </Content>
 

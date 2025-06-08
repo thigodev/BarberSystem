@@ -26,6 +26,7 @@ const fadeInRight = keyframes`
 export const Container = styled.div`
   height: 100vh;
   display: flex;
+  background: white;
   
   @media (max-width: 768px) {
     flex-direction: column;
@@ -55,6 +56,10 @@ export const RightSection = styled.div`
   align-items: center;
   justify-content: center;
   animation: ${fadeInRight} 0.8s ease-out;
+
+  margin: 20px;
+  border-radius: 8px;
+
   
   @media (max-width: 768px) {
     flex: none;
@@ -70,7 +75,7 @@ export const FormContainer = styled.div`
 `
 
 export const Title = styled.h1`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
   color: #333333;
@@ -86,7 +91,7 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.p`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   font-size: 1rem;
   color: #666666;
   margin-bottom: 2rem;
@@ -106,26 +111,26 @@ export const FormWrapper = styled.div`
     gap: 1rem;
     
     /* Estilização dos inputs */
-    > div {
+  > div {
       margin-bottom: 0.5rem;
-      
+
       input {
         width: 100%;
         padding: 1rem;
         border: 1px solid #E0E0E0;
         border-radius: 8px;
         font-size: 1rem;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'poppins', sans-serif;
         background: #FAFAFA;
         transition: all 0.3s ease;
-        
+
         &:focus {
           outline: none;
           border-color: #333333;
           background: #FFFFFF;
           box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
         }
-        
+
         &::placeholder {
           color: #999999;
         }
@@ -142,15 +147,14 @@ export const FormWrapper = styled.div`
       border-radius: 8px;
       font-size: 1rem;
       font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'poppins', sans-serif;
       cursor: pointer;
       transition: all 0.3s ease;
       margin-top: 1rem;
       
       &:hover {
-        background: #333333;
+        background:rgb(226, 226, 226);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
       
       &:active {
@@ -161,7 +165,7 @@ export const FormWrapper = styled.div`
 `
 
 export const ForgotPasswordLink = styled(Link)`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   font-size: 0.9rem;
   color: #666666;
   text-decoration: none;
@@ -176,7 +180,7 @@ export const ForgotPasswordLink = styled(Link)`
 `
 
 export const SignupLink = styled.p`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   font-size: 0.9rem;
   color: #666666;
   text-align: center;
@@ -201,7 +205,7 @@ export const LogoContainer = styled.div`
   justify-content: center;
   
   img {
-    width: 200px;
+    width: 300px;
     height: auto;
     filter: brightness(0) invert(1); /* Torna a logo branca */
     

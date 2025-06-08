@@ -56,7 +56,7 @@ export const CheckboxWrapper = styled.div`
 `
 
 export const Label = styled.label<LabelProps>`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   font-size: 0.9rem;
   color: #666666;
   cursor: pointer;

@@ -9,13 +9,7 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-  background: #dddee2;
-  border-radius: 10px;
-  padding: 16px;
   width: 100%;
-  box-shadow: 1px 1px 2px 2px rgba(0,0,0,.1);
-  border: 2px solid transparent;
-  color: #666360;
   transition: .8s;
   display: flex;
   align-items: center;
@@ -45,14 +39,18 @@ export const Container = styled.div<ContainerProps>`
     `}
 
   input {
+
+    background-color:rgb(245, 245, 245);
+
     flex: 1;
     border: 0;
     font-size:15px;
-    background: transparent;
-    color: #3d3f41;
+    color:rgb(165, 165, 165);
+    padding:1rem;
+    border-radius: 8px;
 
     &::placeholder {
-      color: #666360;
+      color:rgb(150, 150, 150);
     }
   }
 

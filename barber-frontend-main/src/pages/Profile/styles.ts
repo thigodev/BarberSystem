@@ -4,11 +4,9 @@ import profileback from "../../assets/profile-background.png";
 import formback from "../../assets/formback.jpg"
 
 export const Container = styled.div`
-  background: url(${profileback}) 100% no-repeat;
+  background-color: black;
   background-size: cover;
   height: 100vh;
-
-
 `;
 
 export const FlexForm = styled.div`
@@ -28,8 +26,8 @@ export const Content = styled.div`
 
 
 
+
   form {
-    margin: 45px 0;
     width: 100%;
     max-width: 340px;
     text-align: center;
@@ -38,12 +36,13 @@ export const Content = styled.div`
     align-items: center;
 
     h1 {
-      font-size: 30px;
-      text-align: left;
+      font-family: 'poppins', sans-serif;
+      font-size: 20px;
       text-transform: uppercase;
       font-weight: 500;
-      margin-bottom: 20px;
-      color: #404143;
+      margin-bottom: 30px;
+      color:rgb(255, 255, 255);
+      
     }
 
     a {
@@ -57,6 +56,27 @@ export const Content = styled.div`
         color: ${shade(0.2, "#f4ede8")};
       }
     }
+
+    p{
+    margin-top: 30px;
+    font-family: 'poppins', sans-serif;
+    font-size: 0.70rem;
+    color: #AAAAAA;
+    text-align: left;
+
+      max-width: 500px;
+      opacity: 50%;
+}
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      br {
+      display: none;
+    }
+  }
+  
+    @media (max-width: 480px) {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 `;
 
@@ -65,14 +85,14 @@ export const Pointer = styled.div`
     top: 7%;
     left: 7%;
     svg {
-        color: #404143;
-        width: 34px;
+        color:rgb(255, 255, 255);
+        width: 27px;
         height: 34px;
 
         transition: color 0.3s;
 
         &:hover {
-          color: ${shade(0.2, "#38ada9")};
+          transform: scale(1.1);
         }
       }
 
@@ -80,9 +100,7 @@ export const Pointer = styled.div`
 `;
 
 export const FormContent = styled.div`
-  background: url(${formback}) 100% no-repeat;
   background-size: cover;
-  box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,13 +112,10 @@ export const FormContent = styled.div`
 
 
   img {
-    margin-bottom: -3rem;
+    margin-bottom: -1rem;
   }
 
 `;
-
-
-
 
 export const AvatarInput = styled.div`
   margin-bottom: 70px;
@@ -109,10 +124,10 @@ export const AvatarInput = styled.div`
   align-self: center;
 
   img {
-    width: 170px;
-    height: 170px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 
     &:hover {
       transform: scale(1.05);
@@ -124,12 +139,11 @@ export const AvatarInput = styled.div`
     position: absolute;
     width: 48px;
     height: 48px;
-    background: #38ada9;
+    background:rgb(114, 114, 114);
     border-radius: 50%;
     right: 0;
     bottom: 0;
     border: 0;
-    transition: background-color 0.2s, transform 0.3s;
     cursor: pointer;
 
     display: flex;
@@ -143,16 +157,16 @@ export const AvatarInput = styled.div`
     svg {
       width: 20px;
       height: 20px;
-      color: #312e38;
+      color:rgb(179, 179, 179);
       transition: color 0.3s;
 
       &:hover {
-        color: ${shade(0.2, "#312e38")};
+        color: black  ;
       }
     }
 
     &:hover {
-      background: ${shade(0.2, "#38ada9")};
+      background: white;
       transform: scale(1.1);
     }
   }

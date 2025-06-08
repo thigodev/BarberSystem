@@ -39,8 +39,9 @@ export const LogoContainer = styled.div`
   margin-bottom: 3rem;
   
   img {
-    width: 120px;
+    width: 230px;
     height: auto;
+    margin-bottom: -90px;
     filter: brightness(0) invert(1); /* Torna a logo branca */
     
     @media (max-width: 768px) {
@@ -54,7 +55,7 @@ export const LogoContainer = styled.div`
 `
 
 export const Title = styled.h1`
-  font-family: 'Playfair Display', serif;
+  font-family: "Girassol", serif;
   font-size: 4.5rem;
   font-weight: 400;
   color: #FFFFFF;
@@ -73,19 +74,20 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.div`
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-family: 'poppins', sans-serif;
+  font-size: 1.0rem;
   color: #CCCCCC;
   margin-bottom: 3rem;
   position: relative;
-  padding: 0 3rem;
+  padding: 0 11rem;
+  
   
   &::before,
   &::after {
     content: '';
     position: absolute;
     top: 50%;
-    width: 2.5rem;
+    width: 9rem;
     height: 1px;
     background: #CCCCCC;
   }
@@ -127,27 +129,28 @@ export const EntrarButton = styled.button`
   background: #FFFFFF;
   color: #000000;
   border: none;
-  padding: 1rem 3rem;
-  font-family: 'Montserrat', sans-serif;
+  padding: 12px 12px;
+  font-family: 'poppins', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: 50px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
+  width: 500px;
+  
   
   &:hover {
-    background: #F0F0F0;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    background:none;
+    border: solid 1px;
+    transform: translateY(-5px);
+    color: white;
   }
   
-  &:active {
-    transform: translateY(0);
-  }
+
   
   @media (max-width: 768px) {
     padding: 0.8rem 2.5rem;
@@ -161,13 +164,13 @@ export const EntrarButton = styled.button`
 `
 
 export const Description = styled.p`
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  p { font-family: 'poppins', sans-serif;
+  font-size: 0.70rem;
   color: #AAAAAA;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0;
-  
+
+  max-width: 500px;
+  opacity: 50%;
+}
   @media (max-width: 768px) {
     font-size: 0.9rem;
     br {

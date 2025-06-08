@@ -23,7 +23,6 @@ interface HourspanProps {
 
 export const Container = styled.div`
   min-height: 100vh;
-
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -33,12 +32,10 @@ export const Container = styled.div`
 
 // --------------------------------  Cabeçalho --------------------------------------
 export const Header = styled.div`
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
-  padding: 25px 0;
-  background: #438b87;
-  border-radius: 0rem 0rem  3rem 3rem;
+  padding: 10px 0;
+  background:rgb(0, 0, 0);
+
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 `;
@@ -71,7 +68,7 @@ export const HeaderContent = styled.div`
   }
   span{
 
-    color: #0a3d62;
+    color:rgb(90, 90, 90);
     font-weight: 400;
     font-size: 32px;
   }
@@ -101,6 +98,7 @@ export const Profile = styled.div`
   flex-wrap: wrap;
   align-items: center;
   margin-left: auto;
+  
 
 
   img {
@@ -120,18 +118,20 @@ export const Profile = styled.div`
   div {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     margin-left: 16px;
     line-height: 24px;
 
-    span {
-      color: #404143;
-      font-size: 18px;
+    p { 
+
+      font-family: 'poppins', sans-serif;
+      color:rgb(255, 255, 255);
+      font-size: 16px;
+      margin-right: 6px;
     }
 
     a {
       text-decoration: none;
-      color: #dcdde1;
+      color:rgb(146, 146, 146);
       font-size: 20px;
       transition: .1s;
 
@@ -158,24 +158,23 @@ export const Pointer = styled.div`
     position: absolute;
     top: 8.3%;
     left: 6%;
+    
     svg {
-        color: #404143;
-        width: 34px;
-        height: 34px;
+        color:rgb(255, 255, 255);
+        width: 20px;
+        height: 20px;
 
         transition: color 0.3s;
 
         &:hover {
-          color: ${shade(0.2, "#38ada9")};
+          color: ${shade(0.2, "rgb(104, 104, 104)")};
         }
       }
 
 
 `;
 export const FormContent = styled.div`
-  background: url(${formback}) no-repeat;
   background-size: cover;
-  box-shadow: 2px 1px 12px 4px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-wrap: wrap;
   border-radius: 2rem;
@@ -187,7 +186,6 @@ export const FormContent = styled.div`
 `;
 export const FlexItens =  styled.div`
   position: relative;
-
 `;
 
 export const Tittle = styled.div`
@@ -195,11 +193,11 @@ export const Tittle = styled.div`
   gap: .5rem;
   align-items: center;
   font-weight: 500;
-  font-size: 26px;
-  font-family: 'Montserrat';
+  font-size: 20px;
+  font-family: 'poppins';
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #404143;
+  color:rgb(255, 255, 255);
   cursor: default;
   margin-bottom: 3rem;
   flex-wrap: wrap;
@@ -216,21 +214,23 @@ export const Calendar = styled.div`
   border-radius: 15px;
   transition: .2s;
   left: 10rem;
+  
 
   .DayPicker {
     position: relative;
     top: -7rem;
-    left: 10rem;
-    background: #079992;
+    left: 13rem;
+    background:rgb(87, 87, 87);
     border-radius: 10px;
     padding: 20px;
     width: 87%;
     text-transform: capitalize;
     transition: box-shadow 0.3s ease-in-out;
+
   }
 
   .available:not(.outside) {
-    background: #0a3d62;
+    background:rgb(87, 93, 97);
     border-radius: 10px;
     color: #fff;
     margin: 2px;
@@ -244,9 +244,9 @@ export const Calendar = styled.div`
   }
 
   .selected {
-    background: #0a3d62 !important;
+    background:rgb(29, 29, 29) !important;
     border-radius: 10px;
-    color: #dcdde1 !important;
+    color:rgb(255, 255, 255)tant;
   }
 
   &:hover {
@@ -326,6 +326,7 @@ export const ProvidersListContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   overflow-x: auto;
+  
 `;
 
 export const ProviderContainer = styled.button<ProviderContainerProps>`
@@ -333,7 +334,7 @@ export const ProviderContainer = styled.button<ProviderContainerProps>`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 8px 12px;
+  padding: 8px 15px;
   margin-right: 16px;
   border: none;
   border-radius: 10px;
@@ -430,4 +431,3 @@ export const CreateAppointmentButtonText = styled.span`
   font-size: 18px;
   color: #f4ede8;
 `;
-

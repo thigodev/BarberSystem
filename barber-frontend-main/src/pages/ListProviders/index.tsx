@@ -6,6 +6,8 @@ import { useAuth } from "../../hooks/Auth";
 
 import elipse from "../../assets/Vector.svg";
 
+
+
 import { FiCalendar, FiClock, FiLogOut } from "react-icons/fi";
 
 import title from "../../assets/titlehangout.png";
@@ -70,20 +72,18 @@ const Providers: React.FC = () => {
       <Header>
         <HeaderContent>
           <img src={logoImg} alt="Logo" />
-          <h1>
-            Barbearia
-          </h1>
           <Profile>
             <img src={user.avatar_url} alt={user.name} />
             <div>
-              <span>Bem-vindo,</span>
+              <p>Bem-vindo(a),</p>
               <Link to="/profile">
                 <strong>{user.name}</strong>
               </Link>
             </div>
           </Profile>
-          <button onClick={signOut} type="button" title="Sair">
+          <button onClick={signOut} type="button" title="Sair" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', background: 'none', border: 'none', fontSize: '16px', cursor: 'pointer' }}>
             <FiLogOut />
+            <span>Sair</span>
           </button>
         </HeaderContent>
       </Header>
@@ -115,15 +115,6 @@ const Providers: React.FC = () => {
                   <ProviderInfo>
                     <ProviderName>{provider.name}</ProviderName>
                     <FlexProvider>
-                      <ProviderMeta>
-                        <FiCalendar size={20} color="#000000" />
-                        <ProviderMetaText>Segunda à sexta</ProviderMetaText>
-                      </ProviderMeta>
-
-                      <ProviderMeta>
-                        <FiClock size={20} color="#000000" />
-                        <ProviderMetaText>8h às 18h</ProviderMetaText>
-                      </ProviderMeta>
                     </FlexProvider>
                   </ProviderInfo>
                 </ProviderContainer>
