@@ -198,9 +198,10 @@ const CreateAppointment: React.FC = () => {
               </Link>
             </Pointer>
           <Tittle>
-              <h2>Agendamento</h2>
+              <h2>Agende um atendimento</h2>
+              <p>Selecione data, horário e informe o horário desejado para criar o agendamento.</p>
           </Tittle>
-          <HeaderTitle>Cabeleireiros</HeaderTitle>
+          <HeaderTitle>Profissional</HeaderTitle>
 
           <FlexItens>
             <ProvidersListContainer>
@@ -220,13 +221,8 @@ const CreateAppointment: React.FC = () => {
 
 
             <Calendar>
-              <Title>Escolha a data</Title>
 
-              <OpenDatePickerButton onClick={handleToggleDatePicker}>
-                <OpenDatePickerButtonText>
-                  Selecionar outra data
-                </OpenDatePickerButtonText>
-              </OpenDatePickerButton>
+              <OpenDatePickerButton onClick={handleToggleDatePicker} style={{ fontSize: '16px' }}>ESCOLHER DATA</OpenDatePickerButton>
 
               {showDatePicker && (
                 <DayPicker
@@ -245,7 +241,7 @@ const CreateAppointment: React.FC = () => {
           </FlexItens>
 
           <Schedule>
-            <Title>Escolha o horário:</Title>
+            <Title>Horários disponíveis:</Title>
 
             <Section>
               <SectionTitle>Manhã:</SectionTitle>
@@ -288,8 +284,7 @@ const CreateAppointment: React.FC = () => {
             </Section>
           </Schedule>
 
-          <CreateAppointmentButton onClick={handleCreateAppointment} style={{ fontSize: '18px' }}>Confirmar
-</CreateAppointmentButton>
+          <CreateAppointmentButton onClick={handleCreateAppointment} style={{ fontSize: '18px' }}>AGENDAR</CreateAppointmentButton>
         </FormContent>
       </Content>
 
