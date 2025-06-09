@@ -219,7 +219,7 @@ img{
 export const Calendar = styled.div`
   width: 380px;
   height: 120px;
-  border-radius: 15px;
+  border-radius: 4px;
   transition: .2s;
   left: 10rem;
   
@@ -229,16 +229,17 @@ export const Calendar = styled.div`
     top:1px;
     left: 11.50rem;
     background:rgb(87, 87, 87);
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 20px;
     width: 87%;
     text-transform: capitalize;
+    
 
   }
 
   .available:not(.outside) {
     background:rgb(87, 93, 97);
-    border-radius: 10px;
+    border-radius: 4px;
     color: #fff;
     margin: 2px;
     width: 37px;

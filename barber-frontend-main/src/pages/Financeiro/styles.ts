@@ -6,10 +6,12 @@ export const Container = styled.div`
 `
 
 export const Header = styled.div`
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
-  padding: 20px 0;
-  background: #000000;
-  border-radius: 0rem 0rem 3rem 3rem;
+  padding: 10px 0;
+  background:rgb(0, 0, 0);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const HeaderContent = styled.div`
@@ -26,25 +28,22 @@ export const BackButton = styled.button`
   gap: 8px;
   background: transparent;
   border: 1px solid #dcdde1;
-  border-radius: 12px;
-  padding: 12px 18px;
+  border-radius: 4px;
+  padding: 6px 18px;
   color: #dcdde1;
   font-size: 16px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   transition: all 0.3s ease;
   text-decoration: none;
 
   svg {
-    width: 18px;
-    height: 18px;
+  display:none;
   }
 
   &:hover {
     background: #dcdde1;
     color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(220, 221, 225, 0.3);
   }
 `
 
@@ -55,13 +54,13 @@ export const Title = styled.div`
   color: #dcdde1;
   font-size: 28px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-left: 20px;
 
   svg {
-    width: 32px;
-    height: 32px;
+  display:none;
   }
 `
 
@@ -69,7 +68,7 @@ export const MonthSelector = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #dcdde1;
+  color:rgb(255, 255, 255);
 
   svg {
     width: 20px;
@@ -106,12 +105,12 @@ export const SummaryCard = styled.div<{ type: string }>`
         return "linear-gradient(135deg, #6b7280 0%, #4b5563 100%)"
     }
   }};
+
   padding: 2rem;
-  border-radius: 1.2rem;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 
   &:hover {
@@ -126,15 +125,15 @@ export const SummaryCard = styled.div<{ type: string }>`
     span {
       color: rgba(255, 255, 255, 0.9);
       font-size: 16px;
-      font-weight: 500;
-      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-family: 'poppins', sans-serif;
     }
 
     strong {
       color: white;
       font-size: 28px;
       font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'poppins', sans-serif;
     }
   }
 
@@ -158,14 +157,14 @@ export const MainContent = styled.div`
 export const TransactionForm = styled.div`
   background: #484848;
   padding: 2rem;
-  border-radius: 1.2rem;
-  box-shadow: 2px 1px 12px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+
 
   h2 {
     color: white;
     font-size: 24px;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'poppins', sans-serif;
     margin-bottom: 1.5rem;
   }
 `
@@ -173,16 +172,16 @@ export const TransactionForm = styled.div`
 export const TransactionList = styled.div`
   background: #484848;
   padding: 2rem;
-  border-radius: 1.2rem;
-  box-shadow: 2px 1px 12px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 4px; 
 
   h2 {
     color: white;
     font-size: 24px;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'poppins', sans-serif;
     margin-bottom: 1.5rem;
   }
+
 
   .transactions-container {
     max-height: 400px;
@@ -208,7 +207,7 @@ export const TransactionList = styled.div`
     text-align: center;
     padding: 3rem 0;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'poppins', sans-serif;
   }
 `
 
@@ -220,7 +219,7 @@ export const FormGroup = styled.div`
     color: white;
     font-size: 14px;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'poppins', sans-serif;
     margin-bottom: 0.5rem;
   }
 `
@@ -230,11 +229,12 @@ export const Input = styled.input`
   padding: 12px 16px;
   background: #717171;
   border: 1px solid #404143;
-  border-radius: 8px;
+  border-radius: 4px;
   color: white;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   transition: border-color 0.3s ease;
+  color:white;
 
   &::placeholder {
     color: #999591;
@@ -248,13 +248,12 @@ export const Input = styled.input`
 
 export const Select = styled.select`
   width: 100%;
-  padding: 12px 16px;
+  padding: 8px 16px;
   background: #717171;
-  border: 1px solid #404143;
-  border-radius: 8px;
+  border-radius: 4px;
   color: white;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   transition: border-color 0.3s ease;
 
   &:focus {
@@ -273,10 +272,10 @@ export const TextArea = styled.textarea`
   padding: 12px 16px;
   background: #717171;
   border: 1px solid #404143;
-  border-radius: 8px;
+  border-radius: 4px;
   color: white;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   min-height: 80px;
   resize: vertical;
   transition: border-color 0.3s ease;
@@ -299,12 +298,12 @@ export const Button = styled.button`
   gap: 8px;
   background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 14px 20px;
   color: white;
   font-size: 16px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'poppins', sans-serif;
   transition: all 0.3s ease;
 
   svg {
@@ -315,7 +314,6 @@ export const Button = styled.button`
   &:hover {
     background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
   }
 `
 
@@ -330,7 +328,7 @@ export const TransactionItem = styled.div<{ type: string }>`
   transition: transform 0.2s ease;
 
   &:hover {
-    transform: translateX(4px);
+    transform: translatey(2px);
   }
 
   .transaction-info {
@@ -367,13 +365,13 @@ export const TransactionItem = styled.div<{ type: string }>`
       color: white;
       font-size: 16px;
       font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'poppins', sans-serif;
     }
 
     span {
       color: #999591;
       font-size: 14px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'poppins', sans-serif;
     }
   }
 
@@ -386,7 +384,7 @@ export const TransactionItem = styled.div<{ type: string }>`
       color: ${(props) => (props.type === "entrada" ? "#22c55e" : "#ef4444")};
       font-weight: 700;
       font-size: 16px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'poppins', sans-serif;
     }
 
     .remove-btn {
@@ -395,12 +393,9 @@ export const TransactionItem = styled.div<{ type: string }>`
       color: #ef4444;
       padding: 8px;
       border-radius: 4px;
-      transition: all 0.2s;
+      transition: all 0.2s
 
-      svg {
-        width: 16px;
-        height: 16px;
-      }
+
 
       &:hover {
         background: rgba(239, 68, 68, 0.1);

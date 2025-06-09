@@ -182,12 +182,11 @@ export const Dashboard: React.FC = () => {
       <Header>
         <HeaderContent>
           <img src={logoImg || "/placeholder.svg"} alt="Logo" />
-          <h1>Barbearia</h1>
           <Profile>
             <div></div>
             <img src={user.avatar_url || "/placeholder.svg"} alt={user.name} />
             <div>
-              <span>Bem-vindo,</span>
+              <p>Bem-vindo(a),</p>
               <Link to="/profile">
                 <strong>{user.name}</strong>
               </Link>
@@ -197,12 +196,12 @@ export const Dashboard: React.FC = () => {
           <Link to="/financeiro">
             <FinanceButton type="button">
               <FiDollarSign />
-              <span>Financeiro</span>
+              <p>Financeiro</p>
             </FinanceButton>
           </Link>
-
-          <button onClick={signOut} type="button">
+          <button onClick={signOut} type="button" title="Sair" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', background: 'none', border: 'none', fontSize: '16px', cursor: 'pointer' }}>
             <FiLogOut />
+            <span>Sair</span>
           </button>
         </HeaderContent>
       </Header>
@@ -212,7 +211,7 @@ export const Dashboard: React.FC = () => {
           <FlexForm>
             <Wellcome>
               <h1>
-                Seja Bem vindo <span>{user.name}</span>
+                Seja bem vindo <span>{user.name}</span>
               </h1>
               <div>
                 <h2>{format(Date.now(), "HH:mm")}</h2>
@@ -221,9 +220,9 @@ export const Dashboard: React.FC = () => {
             </Wellcome>
             <Income>
               <h1>Sua meta diária é:</h1>
-              <h1>
-                R$:<span> {plusAppointments()}</span>
-              </h1>
+              <p>
+                R$:<span>{plusAppointments()}</span>
+              </p>
             </Income>
             <Weather>
               <div>

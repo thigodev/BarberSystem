@@ -264,7 +264,6 @@ export const Financeiro: React.FC = () => {
               <FiDownload />
             </button>
 
-            <FiCalendar />
             <Select value={selectedMonth} onChange={(e) => setSelectedMonth(Number(e.target.value))}>
               {months.map((month, index) => (
                 <option key={index} value={index}>
@@ -326,8 +325,8 @@ export const Financeiro: React.FC = () => {
                   })
                 }
               >
-                <option value="entrada">➕ Entrada</option>
-                <option value="saida">➖ Saída</option>
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
               </Select>
             </FormGroup>
 

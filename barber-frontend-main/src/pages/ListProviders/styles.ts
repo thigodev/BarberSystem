@@ -9,8 +9,6 @@ import { FiLogOut } from "react-icons/fi";
 export const Container = styled.div`
 min-height: 100vh;
 background:rgba(25, 24, 27, 1);
-
-
 `;
 
 
@@ -85,8 +83,6 @@ export const HeaderContent = styled.div`
   }
   }
 `;
-
-
 
 export const Profile = styled.div`
   display: flex;

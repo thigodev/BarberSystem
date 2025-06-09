@@ -146,7 +146,7 @@ export const Profile: React.FC = () => {
 
               <Button type="submit">Confirmar alterações</Button>
 
-              <p>Sua foto de perfil é visível para todos, em todos os produtos sistemas da berbearia.</p>
+              <p>Sua foto de perfil é visível para todos, em todos os produtos e sistemas da berbearia.</p>
             </Form>
           </FormContent>
         </Content>

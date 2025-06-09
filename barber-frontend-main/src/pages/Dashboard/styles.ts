@@ -5,13 +5,13 @@ import weather from "../../assets/back717171.png"
 
 export const Container = styled.div`
   min-height: 100vh;
+  background:rgba(25, 24, 27, 1);
   `
 
 export const Header = styled.div`
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
-  padding: 20px 0;
-  background: #000000;
-  border-radius: 0rem 0rem  3rem 3rem;
+  padding: 10px 0;
+  background:rgb(0, 0, 0);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +31,7 @@ export const HeaderContent = styled.div`
   h1{
     font-weight: 500;
     font-size: 32px;
-    font-family: 'Montserrat';
+    font-family: 'poppins';
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #dcdde1;
@@ -42,29 +42,36 @@ export const HeaderContent = styled.div`
 
     transition: 1s;
   }
-  span{
 
-    color:rgb(255, 255, 255);
+    p{
+    font-family: 'poppins', sans-serif;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 16px;
+}
+  span{
+    font-family: 'poppins', sans-serif;
+    background: white;
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+    padding: 6px 30px;
+    border-radius: 8px;
+
+      
+   &:hover{
+    transition: .6s;
+    background:rgb(54, 54, 54);
+    color:rgb(255, 255, 255);
+  }
   }
   button {
-    margin-left: 80px;
+    margin-left: 20px;
     background: transparent;
     border: 0;
     transition: box-shadow 0.3s ease-in-out;
 
     svg {
-      color: #dcdde1;
-      width: 25px;
-      height: 25px;
-      transition: .2s;
-
-
-    &:hover {
-      transition: .2s;
-      color: #626262;
-    }
+    display: none;
   }
   }
 `
@@ -74,31 +81,26 @@ export const FinanceButton = styled.button`
   align-items: center;
   gap: 8px;
   background: #22c55e !important;
-  border: 2px solid #22c55e;
-  border-radius: 12px;
-  padding: 12px 20px;
-  margin-left: 20px !important;
+  border-radius: 8px;
+  padding: 6px 20px;
+  margin-left: 50px !important;
   transition: all 0.3s ease;
   text-decoration: none;
 
-  svg {
-    color: #fff !important;
-    width: 20px !important;
-    height: 20px !important;
-  }
-
-  span {
+  p{
+    font-family: 'poppins', sans-serif;
     color: #fff !important;
     font-weight: 600;
-    font-size: 16px !important;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 14px !important;
   }
 
   &:hover {
-    background: #16a34a !important;
-    border-color: #16a34a;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+    background:rgb(49, 56, 52) !important;
+    border-color: #16a34a;  
+
+    transition: .6s;
+    background:rgb(54, 54, 54);
+    color:rgb(255, 255, 255);
   }
 
   &:active {
@@ -110,39 +112,33 @@ export const Profile = styled.div`
   display: flex;
   align-items: center;
   margin-left: auto;
-  text-transform: capitalize;
+
 
   img {
     width: 65px;
     height: 65px;
     border-radius: 60%;
-    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.1);
     transition: .2s;
+
     &:hover {
       width: 68px;
       height: 68px;
       cursor: pointer;
-      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
       }
   }
 
   div {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     margin-left: 16px;
     line-height: 24px;
 
-    span {
-      color: #404143;
-      font-size: 18px;
-    }
-
     a {
       text-decoration: none;
-      color: #dcdde1;
+      color:rgb(134, 134, 134);
       font-size: 20px;
       transition: .1s;
+      margin-left: 5px;
 
       &:hover {
         transition: .2s;
@@ -150,7 +146,7 @@ export const Profile = styled.div`
       }
     }
   }
-`
+`;
 
 export const Content = styled.div`
   width: 80%;
@@ -160,14 +156,11 @@ export const Content = styled.div`
 export const FlexForm = styled.div`
   display: flex;
   width: 100%;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  justify-content: space-between;
 `
 
 export const FormContent = styled.div`
-  background-color: #484848;
-  box-shadow: 2px 1px 12px 4px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -195,126 +188,151 @@ export const FormContent = styled.div`
   `
 
 export const Wellcome = styled.div`
-  background: url(${wellcome}) no-repeat 100%;
+  background: rgba(15, 15, 15, 1);
   padding: .5rem;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
-  width: 27rem;
+  width: 20rem;
   height: 13rem;
-  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
-  border-radius: 1.2rem;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 
+  
+
+  
+
 
   h1{
-    width: 70%;
-    text-transform: capitalize;
+    width: 100%;
     color:rgb(255, 255, 255);
     font-weight: 600;
+    font-size: 30px;
+    font-family: 'poppins', sans-serif;
+
     span{
       color:rgb(255, 255, 255);
       font-weight: 500;
+      font-family: 'poppins', sans-serif;
     }
   }
 
   h2{
     color:rgb(255, 255, 255);
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 600;
+    font-family: 'poppins', sans-serif;
   }
   div{
     display: flex ;
     align-items: center;
     text-transform: capitalize;
     gap: .5rem;
+    font-family: 'poppins', sans-serif;
 
     h4{
       font-size: 20px;
       color:rgb(255, 255, 255);
       font-weight: 600;
+      font-family: 'poppins', sans-serif;
 
     }
   }
 `
 
 export const Income = styled.div`
-  background: url(${income}) no-repeat 100%;
+  background: rgba(15, 15, 15, 1);
   padding: .5rem;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
-  width: 27rem;
+  width: 20rem;
   height: 13rem;
-  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
-  border-radius: 1.2rem;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 
   h1{
     width: 65%;
-    font-size: 28px;
-    text-transform: capitalize;
+    font-size: 20px;
     color:rgb(255, 255, 255);
     font-weight: 600;
+    font-family: 'poppins', sans-serif; 
+
     span{
-      font-size: 28px;
+      font-size: 30px;
       padding-bottom: 1rem;
       color:rgb(255, 255, 255);
       font-weight: 600;
+      font-family: 'poppins', sans-serif;
     }
   }
+
+  p{
+    width: 65%;
+    font-size: 30px;
+    color:rgb(255, 255, 255);
+    font-weight: 600;
+    font-family: 'poppins', sans-serif;
+    margin-bottom: 40px;
+  }
+
+
 `
 export const Weather = styled.div`
-  background: url(${weather}) no-repeat 100%;
+  background: rgba(15, 15, 15, 1);
   padding: .5rem;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
-  width: 27rem;
+  width: 20rem;
   height: 13rem;
-  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
-  border-radius: 1.2rem;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  position: relative;
   justify-content: space-around;
 
   img{
-      width: 25px;
-      height: 25px;
+      display: none;
     }
 
   h1{
-    width: 65%;
-    font-size: 28px;
+    width: 100%;
+    font-size: 20px;
     text-transform: capitalize;
     color:rgb(255, 255, 255);
     font-weight: 600;
+    font-family: 'poppins', sans-serif;
+
     span{
-      font-size: 28px;
+      font-size: 20px;
       padding-bottom: 1rem;
       color:rgb(255, 255, 255);
       font-weight: 600;
+      font-family: 'poppins', sans-serif;
     }
 
   }
 
   h2{
     font-weight: 600;
-    font-size: 28px;
+    font-size: 40px;
     color:rgb(255, 255, 255);
+    font-family: 'poppins', sans-serif;
 
   }
   span{
-      font-size: 28px;
+      font-size: 40px;
       padding-bottom: 1rem;
       color:rgb(255, 255, 255);
       font-weight: 600;
+      font-family: 'poppins', sans-serif;
+      margin-left: 45px;
     }
 `
 
 export const Schedule = styled.div`
+  background: rgba(15, 15, 15, 1);
   flex: 1;
   overflow-y: scroll;
   padding-right: 20px;
@@ -322,13 +340,13 @@ export const Schedule = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
   height: 465px;
-  box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.35);
   position: relative;
-  border-radius: 1rem .1rem 1rem 1rem;
+  border-radius: 4px;
 
   h1 {
     font-size: 36px;
     color:rgb(255, 255, 255);
+    font-family: 'poppins', sans-serif;
   }
 
 
@@ -338,10 +356,12 @@ export const Schedule = styled.div`
     display: flex;
     align-items: center;
     font-weight: 500;
+    font-family: 'poppins', sans-serif;
 
     span {
       display: flex;
       align-items: center;
+      font-family: 'poppins', sans-serif;
     }
 
     span + span::before {
@@ -356,7 +376,6 @@ export const Schedule = styled.div`
 
 export const NextAppointment = styled.div`
   margin-top: 64px;
-
   strong {
     color: #999591;
     font-size: 20px;
@@ -364,11 +383,11 @@ export const NextAppointment = styled.div`
   }
 
   div {
-    background: #438b87;
+    background:rgb(56, 150, 91);
     display: flex;
     align-items: center;
     padding: 16px 24px;
-    border-radius: 10px;
+    border-radius: 4px;
     margin-top: 24px;
     position: relative;
 
@@ -379,7 +398,7 @@ export const NextAppointment = styled.div`
       width: 3px;
       left: 0;
       content: "";
-      background: #079992;
+      background:rgb(56, 150, 91);
     }
 
     img {
@@ -400,7 +419,7 @@ export const NextAppointment = styled.div`
       color: #fff;
 
       svg {
-        color: #38ada9;
+        color:rgb(255, 255, 255);
         margin-right: 8px;
       }
     }
@@ -441,18 +460,18 @@ export const Appointment = styled.div`
     width: 70px;
 
     svg {
-      color: #38ada9;
+      color: #404143;
       margin-right: 8px;
     }
   }
 
   div {
     flex: 1;
-    background: #438b87;
+    background:rgb(75, 75, 75);
     display: flex;
     align-items: center;
     padding: 16px 24px;
-    border-radius: 10px;
+    border-radius: 4px;
     margin-left: 24px;
 
     img {
@@ -470,17 +489,19 @@ export const Appointment = styled.div`
 `
 
 export const Calendar = styled.div`
-  box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  background: rgba(15, 15, 15, 1);
   width: 380px;
-  padding-top: .3rem;
-  border-radius: 15px;
+  padding-top: 2rem;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -223px;
 
   h1 {
     font-size: 32px;
     color:rgb(255, 255, 255);
+    font-family: 'poppins', sans-serif;
   }
 
 
@@ -490,10 +511,13 @@ export const Calendar = styled.div`
     display: flex;
     align-items: center;
     font-weight: 500;
+    font-family: 'poppins', sans-serif;
+    
 
     span {
       display: flex;
       align-items: center;
+      font-family: 'poppins', sans-serif;
     }
 
     span + span::before {
@@ -506,17 +530,17 @@ export const Calendar = styled.div`
   }
 
   .DayPicker {
-    background: #717171;
-    border-radius: 10px;
+    background:rgba(25, 24, 27, 1);
+    border-radius: 4px;
     padding: 20px;
     width: 87%;
+    height: 80%;
     text-transform: capitalize;
-    transition: box-shadow 0.3s ease-in-out;
   }
 
   .available:not(.outside) {
-    background: #242424;
-    border-radius: 10px;
+    background: rgba(15, 15, 15, 1);
+    border-radius: 4px;
     color: #fff;
     margin: 2px;
     width: 37px;
@@ -524,14 +548,14 @@ export const Calendar = styled.div`
   }
 
   .disabled {
-    color: #000 !important;
+    color: rgb(212, 212, 212) !important;
     background: transparent !important;
   }
 
   .selected {
-    background: #242424 !important;
+    background: #22c55e !important;
     border-radius: 10px;
-    color:rgb(85, 85, 85) !important;
+    color:rgb(71, 71, 71) !important;
   }
 
 `
