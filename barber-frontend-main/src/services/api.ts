@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const api = axios.create({
-  baseURL: "http://localhost:3333",
+  baseURL: "http://31.220.97.248:3333",
 })
 
 export const apiKey = "95e51a37c6e94e1e95e165534241601"
