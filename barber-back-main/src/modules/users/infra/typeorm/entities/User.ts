@@ -5,6 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { v4 as uuid } from "uuid";
 
 import { Exclude, Expose } from "class-transformer";
 
@@ -34,6 +35,12 @@ class User {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
+    }
+  }
 
   @Expose()
   get avatar_url(): string {
