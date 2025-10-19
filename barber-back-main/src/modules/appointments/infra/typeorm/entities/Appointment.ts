@@ -9,7 +9,7 @@ import {
 } from 'typeorm'
 
 import User from '../../../../users/infra/typeorm/entities/User'
-
+import { v4 as uuid } from "uuid";
 /**
  * Um para Um (OneToOne)
  * Um para Muitos (OneToMany)
@@ -19,30 +19,36 @@ import User from '../../../../users/infra/typeorm/entities/User'
 @Entity('appointments')
 class Appointment {
   @PrimaryGeneratedColumn('uuid')
-    id: string
+  id: string
 
   @Column()
-    provider_id: string
+  provider_id: string
 
   @ManyToOne(() => User)
   @JoinColumn({ name: 'provider_id' })
-    provider: User
+  provider: User
 
   @Column()
-    user_id: string
+  user_id: string
 
   @ManyToOne(() => User)
   @JoinColumn({ name: 'user_id' })
-    user: User
+  user: User
 
   @Column()
-    date: Date
+  date: Date
 
   @CreateDateColumn()
-    created_at: Date
+  created_at: Date
 
   @UpdateDateColumn()
-    updated_at: Date
+  updated_at: Date
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
+    }
+  }
 }
 
 export default Appointment
